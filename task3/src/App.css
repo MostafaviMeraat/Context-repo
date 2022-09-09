@@ -1,0 +1,19 @@
+.App {
+  margin: 2rem;
+  font-size: 18px;
+  font-family: Helvetica, sans-serif, Arial;
+}
+p{
+  width: fit-content;
+  color: hsl(0, 0%, 85%);
+}
+p:hover {
+  scale: 1.1;
+  color: hsl(12, 97%, 70%);
+  transition: all 200ms ease-in-out;
+}
+
+lable {
+  background-color: red;
+  width: 200px;
+}

@@ -4,10 +4,12 @@ import Card from './Card';
 import UserContext from './stroe/User';
 
 
+
 function App() {
   const [name,setName] = useState("")
   const [age,setAge] = useState("")
   const data = useContext(UserContext)
+
 
   function onSubmit () {
     if (name === '' || age === '') {
@@ -25,7 +27,7 @@ function App() {
   return (
     
     <div className="App">
-        <input placeholder='name' value={name} onChange={(e)=>{
+        <input placeholder='name' value={name} autoFocus onChange={(e)=>{
           setName(e.target.value)
         }} 
         />
@@ -34,15 +36,16 @@ function App() {
 
         }} />
         <div>
-          <input type="submit" value="Update" onClick={onSubmit} autoComplete={'off'} />
+          <input type="submit" value="Update" onClick={onSubmit} autoComplete={'off'}  />
           <input type="submit" value='Submit' onClick={onSubmit} autoComplete={'off'} />
           {/* <button style={{marginLeft:"1rem"}} onClick={del} >Delete</button> */}
         </div>
-        
+
         <UserContext.Provider value={data}>
           <Card />
           <Card />
         </UserContext.Provider>
+
     </div>
     
   )
